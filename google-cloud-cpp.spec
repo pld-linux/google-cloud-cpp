@@ -8,6 +8,9 @@ Group:		Libraries
 #Source0Download: https://github.com/googleapis/google-cloud-cpp/releases
 Source0:	https://github.com/googleapis/google-cloud-cpp/archive/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	12829bceb221cfd3e28588262d141cfd
+# see external/googleapis/CMakeLists.txt and cmake/GoogleapisConfig.cmake
+Source1:	https://github.com/googleapis/googleapis/archive/c81bb701eb53991d6faf74b2656eaf539261a122.tar.gz
+# Source1-md5:	401142248153b2d1c0c8982beb548cb9
 URL:		https://github.com/googleapis/google-cloud-cpp
 BuildRequires:	abseil-cpp-devel >= 20210324.2
 BuildRequires:	c-ares-devel
@@ -54,6 +57,9 @@ Pliki nagłówkowe bibliotek Google Cloud C++.
 
 %prep
 %setup -q
+
+install -d build/external/googleapis/src
+ln -sf %{SOURCE1} build/external/googleapis/src
 
 %build
 install -d build
