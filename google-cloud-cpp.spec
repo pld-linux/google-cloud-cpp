@@ -25,6 +25,7 @@ BuildRequires:	openssl-devel >= 1.0.2
 # >= 21.1 ? (docs say so); 3.14 was not sufficient, builds with 3.17
 BuildRequires:	protobuf-devel >= 3.17
 BuildRequires:	re2-devel
+BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRequires:	zlib-devel
 Requires:	crc32c >= 1.1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
