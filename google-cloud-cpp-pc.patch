@@ -1,0 +1,11 @@
+google_cloud_cpp_storage_protos is interface-only library without pc file
+--- google-cloud-cpp-2.29.0/external/googleapis/CMakeLists.txt.orig	2024-09-06 00:10:49.000000000 +0200
++++ google-cloud-cpp-2.29.0/external/googleapis/CMakeLists.txt	2024-09-09 20:20:18.702793427 +0200
+@@ -394,7 +394,6 @@ string(
+     "google_cloud_cpp_cloud_bigquery_protos"
+     "google_cloud_cpp_iam_protos"
+     "google_cloud_cpp_pubsub_protos"
+-    "google_cloud_cpp_storage_protos"
+     "google_cloud_cpp_logging_protos"
+     "google_cloud_cpp_iam_v1_iam_policy_protos"
+     "google_cloud_cpp_iam_v1_options_protos"
