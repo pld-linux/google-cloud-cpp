@@ -1,16 +1,16 @@
 Summary:	Google Cloud Platform C++ Client Libraries
 Summary(pl.UTF-8):	Biblioteki klienckie C++ platformy Google Cloud
 Name:		google-cloud-cpp
-Version:	2.29.0
+Version:	2.38.0
 Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/googleapis/google-cloud-cpp/releases
 Source0:	https://github.com/googleapis/google-cloud-cpp/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	4a5ed436e6cf5924b2bdd0afa27999ab
+# Source0-md5:	c4096670cfda9903ba037ba6597aed8e
 # see external/googleapis/CMakeLists.txt and cmake/GoogleapisConfig.cmake
-Source1:	https://github.com/googleapis/googleapis/archive/6a474b31c53cc1797710206824a17b364a835d2d.tar.gz
-# Source1-md5:	dfa7d767e92a8bf795e7fa96589faff8
+Source1:	https://github.com/googleapis/googleapis/archive/de157ca34fa487ce248eb9130293d630b501e4ad.tar.gz
+# Source1-md5:	eb0fa4f9658428839bfa01c0e037ee12
 Patch0:		%{name}-pc.patch
 URL:		https://github.com/googleapis/google-cloud-cpp
 BuildRequires:	abseil-cpp-devel >= 20210324.2
@@ -165,6 +165,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_cloud_common_common_protos.so.2
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_cloud_extended_operations_protos.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_cloud_extended_operations_protos.so.2
+%attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_cloud_location_locations_protos.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_cloud_location_locations_protos.so.2
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_cloud_orgpolicy_v1_orgpolicy_protos.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_cloud_orgpolicy_v1_orgpolicy_protos.so.2
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_common.so.*.*.*
@@ -185,8 +187,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_iam_v1_options_protos.so.2
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v1_policy_protos.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_iam_v1_policy_protos.so.2
+%attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v1_resource_policy_member_protos.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_iam_v1_resource_policy_member_protos.so.2
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v2_protos.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_iam_v2_protos.so.2
+%attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v3_protos.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_iam_v3_protos.so.2
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_logging.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgoogle_cloud_cpp_logging.so.2
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_logging_protos.so.*.*.*
@@ -294,6 +300,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_bigtable_protos.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_cloud_common_common_protos.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_cloud_extended_operations_protos.so
+%attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_cloud_location_locations_protos.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_cloud_orgpolicy_v1_orgpolicy_protos.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_common.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_grpc_utils.so
@@ -304,7 +311,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v1_iam_policy_protos.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v1_options_protos.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v1_policy_protos.so
+%attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v1_resource_policy_member_protos.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v2_protos.so
+%attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_iam_v3_protos.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_logging.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_logging_protos.so
 %attr(755,root,root) %{_libdir}/libgoogle_cloud_cpp_logging_type_protos.so
@@ -390,6 +399,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/google_cloud_cpp_cloud_bigquery_protos.pc
 %{_pkgconfigdir}/google_cloud_cpp_cloud_extended_operations_protos.pc
 %{_pkgconfigdir}/google_cloud_cpp_cloud_common_common_protos.pc
+%{_pkgconfigdir}/google_cloud_cpp_cloud_location_locations_protos.pc
 %{_pkgconfigdir}/google_cloud_cpp_cloud_orgpolicy_v1_orgpolicy_protos.pc
 %{_pkgconfigdir}/google_cloud_cpp_common.pc
 %{_pkgconfigdir}/google_cloud_cpp_grpc_utils.pc
@@ -401,7 +411,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/google_cloud_cpp_iam_v1_iam_policy_protos.pc
 %{_pkgconfigdir}/google_cloud_cpp_iam_v1_options_protos.pc
 %{_pkgconfigdir}/google_cloud_cpp_iam_v1_policy_protos.pc
+%{_pkgconfigdir}/google_cloud_cpp_iam_v1_resource_policy_member_protos.pc
 %{_pkgconfigdir}/google_cloud_cpp_iam_v2_protos.pc
+%{_pkgconfigdir}/google_cloud_cpp_iam_v3_protos.pc
 %{_pkgconfigdir}/google_cloud_cpp_logging.pc
 %{_pkgconfigdir}/google_cloud_cpp_logging_mocks.pc
 %{_pkgconfigdir}/google_cloud_cpp_logging_protos.pc
@@ -450,6 +462,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/cmake/google_cloud_cpp_iam
 %{_libdir}/cmake/google_cloud_cpp_iam_mocks
 %{_libdir}/cmake/google_cloud_cpp_iam_v2
+%{_libdir}/cmake/google_cloud_cpp_iam_v3
 %{_libdir}/cmake/google_cloud_cpp_logging
 %{_libdir}/cmake/google_cloud_cpp_logging_mocks
 %{_libdir}/cmake/google_cloud_cpp_logging_type
