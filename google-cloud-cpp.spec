@@ -60,7 +60,7 @@ Pliki nagłówkowe bibliotek Google Cloud C++.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 install -d build/external/googleapis/src
 ln -sf %{SOURCE1} build/external/googleapis/src
