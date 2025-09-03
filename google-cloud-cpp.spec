@@ -2,7 +2,7 @@ Summary:	Google Cloud Platform C++ Client Libraries
 Summary(pl.UTF-8):	Biblioteki klienckie C++ platformy Google Cloud
 Name:		google-cloud-cpp
 Version:	2.38.0
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/googleapis/google-cloud-cpp/releases
