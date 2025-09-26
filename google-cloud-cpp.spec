@@ -1,16 +1,16 @@
 Summary:	Google Cloud Platform C++ Client Libraries
 Summary(pl.UTF-8):	Biblioteki klienckie C++ platformy Google Cloud
 Name:		google-cloud-cpp
-Version:	2.38.0
-Release:	2
+Version:	2.42.0
+Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/googleapis/google-cloud-cpp/releases
 Source0:	https://github.com/googleapis/google-cloud-cpp/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	c4096670cfda9903ba037ba6597aed8e
+# Source0-md5:	dde25f70bb0326b293db303df38a04cb
 # see external/googleapis/CMakeLists.txt and cmake/GoogleapisConfig.cmake
-Source1:	https://github.com/googleapis/googleapis/archive/de157ca34fa487ce248eb9130293d630b501e4ad.tar.gz
-# Source1-md5:	eb0fa4f9658428839bfa01c0e037ee12
+Source1:	https://github.com/googleapis/googleapis/archive/46403a9acec0719c130b33eb38b2ee62a45f9f6c.tar.gz
+# Source1-md5:	16406ca1a5d7722fa295c3fc523a66a8
 Patch0:		%{name}-pc.patch
 URL:		https://github.com/googleapis/google-cloud-cpp
 BuildRequires:	abseil-cpp-devel >= 20210324.2
@@ -18,6 +18,7 @@ BuildRequires:	c-ares-devel
 BuildRequires:	cmake >= 3.13
 BuildRequires:	crc32c-devel >= 1.1.2
 BuildRequires:	curl-devel >= 7.47.0
+BuildRequires:	google-benchmark-devel
 BuildRequires:	grpc-devel >= 1.35
 BuildRequires:	libstdc++-devel >= 6:7.5
 BuildRequires:	nlohmann-json-devel >= 3.4.0
@@ -30,6 +31,9 @@ BuildRequires:	zlib-devel
 Requires:	crc32c >= 1.1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# _ZN4absl12lts_2025081413cord_internal17cordz_next_sampleE
+# _ZN6google8protobuf8internal15ThreadSafeArena13thread_cache_E
+%define		skip_post_check_so libgoogle_cloud_cpp_.*_protos.so.* libgoogle_cloud_cpp_iam.so.*
 %description
 This package contains idiomatic C++ client libraries for Google Cloud
 Platform (<https://cloud.google.com/>) services.
