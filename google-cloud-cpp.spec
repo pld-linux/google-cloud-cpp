@@ -49,9 +49,11 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	abseil-cpp-devel >= 20210324.2
 Requires:	c-ares-devel
+Requires:	crc32c-devel >= 1.1.2
 Requires:	curl-devel >= 7.47.0
 Requires:	grpc-devel >= 1.35
 Requires:	libstdc++-devel >= 6:7.5
+Requires:	nlohmann-json-devel >= 3.4.0
 Requires:	openssl-devel >= 1.0.2
 Requires:	protobuf-devel >= 3.17
 Requires:	zlib-devel
